@@ -505,12 +505,13 @@ void main(){
       const v = (k) => String(fd.get(k) || '').trim();
       const action = form.getAttribute('action') || '';
       if (errBox) errBox.textContent = '';
-      const real = action && !/YOUR_FORM_ID/.test(action);
+      const real = action && !/YOUR_FORM_ID/.test(action) && !/YOUR_ACCESS_KEY/.test(String(fd.get('access_key') || ''));
       if (real) {
         sendBtn.disabled = true;
         try {
           const r = await fetch(action, { method: 'POST', body: fd, headers: { Accept: 'application/json' } });
           if (!r.ok) throw new Error('bad');
+          const j = await r.json().catch(() => ({ success: true })); if (j.success === false) throw new Error('bad');
           showDone('Message sent', 'Thanks ' + v('name').split(' ')[0] + '! I will get back to you personally.', false);
           form.reset();
         } catch (err) { showErr('Could not send right now. Please email ' + TO + ' directly.'); if (window.__ctReopen) window.__ctReopen(); }
