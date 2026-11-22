@@ -20,6 +20,13 @@
 .wc-shot{display:block;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,.35);aspect-ratio:16/10;background:rgba(255,255,255,.12)}
 .wc-shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
 .wc-visit{display:inline-block;align-self:flex-start;margin-top:16px;background:#fff;color:#7b0612;font-weight:800;font-size:14px;padding:10px 20px;border-radius:30px;text-decoration:none}
+.sites{padding:90px 6vw 70px}
+.sites-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:28px;max-width:1200px;margin:40px auto 0}
+.site-card{border-radius:24px;padding:26px;color:#fff;background:linear-gradient(150deg,#ac2c37,#3a0810);display:flex;flex-direction:column;box-shadow:0 18px 40px rgba(58,8,16,.3)}
+.site-card:nth-child(2){background:linear-gradient(150deg,#ff7a45,#3a0810)}
+.site-card:nth-child(3){background:linear-gradient(150deg,#1b1030,#c0313f)}
+.site-card .wc-tag{align-self:flex-start;margin-bottom:14px}
+.site-card h3{font-size:clamp(22px,2.2vw,30px);line-height:1.05;letter-spacing:.02em;color:#fff;margin-bottom:14px}
 </style>
 </head>
 <body>
@@ -228,17 +235,24 @@
     <article class="work-card c6"><span class="wc-tag">Green Agro Mart</span><h3>Click-to-WhatsApp Campaigns</h3><p>Goal → Turn farmer attention into WhatsApp enquiries<br>Action → Product-wise Meta campaigns on ₹250 a day<br>Result → <b>2,282 conversations at ₹2.04 each (Oct 2026)</b></p><div class="wc-pills"><span>Meta Ads</span><span>WhatsApp</span><span>CPL</span></div></article>
     <article class="work-card c7"><span class="wc-tag">Green Agro Mart</span><h3>Boosted Reels, Hindi Audience</h3><p>Goal → Reach farmers in their own language<br>Action → Boosted the best Reels to a Hindi audience<br>Result → <b>₹4,595 spent: 144K views, 87,196 reach</b></p><div class="wc-pills"><span>Boosted Posts</span><span>Reels</span><span>Reach</span></div></article>
     <article class="work-card c9"><span class="wc-tag">Green Agro Mart</span><h3>Product Catalogue Ads</h3><p>Goal → Show products directly inside the ads<br>Action → Built a Meta catalogue and ran Advantage+ catalogue ads<br>Result → <b>4 products live across Feed, Stories and Reels</b></p><div class="wc-pills"><span>Commerce Manager</span><span>Catalogue</span><span>Advantage+</span></div></article>
-    <article class="work-card c10 wc-site"><span class="wc-tag">Green Agro Mart</span><h3>Agri-Inputs E-commerce Website</h3><a class="wc-shot" href="https://greenagromart.com/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgreenagromart.com%2F?w=1000&h=625" alt="Green Agro Mart website screenshot" loading="lazy"></a><a class="wc-visit" href="https://greenagromart.com/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
     <article class="work-card c8"><span class="wc-tag">Green Agro Mart</span><h3>Instagram Organic Reach</h3><p>Goal → Grow reach beyond existing followers<br>Action → Reels-first content: Hindi hooks, product demos, farmer problems<br>Result → <b>813,979 views, 99.2% from non-followers</b></p><div class="wc-pills"><span>Instagram</span><span>Reels</span><span>Content</span></div></article>
-    <article class="work-card c5 wc-site"><span class="wc-tag">Ronak Pharma</span><h3>Wholesale Distributor Website</h3><a class="wc-shot" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fronakpharma.netlify.app%2F?w=1000&h=625" alt="Ronak Pharma website screenshot" loading="lazy"></a><a class="wc-visit" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
     <article class="work-card c2"><span class="wc-tag">Ronak Pharma</span><h3>Offline to WhatsApp Leads</h3><p>Problem → Zero online presence<br>Action → Meta ad → WhatsApp → lead form, compliant creatives<br>Result → <b>74 conversations at ₹7.83 in 4 days</b></p><div class="wc-pills"><span>Meta Ads</span><span>WhatsApp</span><span>Compliance</span></div></article>
     <article class="work-card c3"><span class="wc-tag">EverydaySmile</span><h3>Healthcare Lead Generation</h3><p>Problem → Fill consultation slots in Lucknow<br>Action → Meta and Google Ads, lead forms, Zoho email nurture<br>Result → <b>Qualified patient leads at lower CPL</b></p><div class="wc-pills"><span>Meta Ads</span><span>Google Ads</span><span>Zoho</span></div></article>
-    <article class="work-card c4 wc-site"><span class="wc-tag">EverydaySmile</span><h3>Healthcare Consulting Website</h3><a class="wc-shot" href="https://www.everydaysmile.in/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.everydaysmile.in%2F?w=1000&h=625" alt="EverydaySmile website screenshot" loading="lazy"></a><a class="wc-visit" href="https://www.everydaysmile.in/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
     <article class="work-card c5"><span class="wc-tag">EverydaySmile</span><h3>n8n Lead Automation</h3><p>Problem → Leads lost between forms and CRM<br>Action → n8n workflows with Claude AI and ChatGPT<br>Result → <b>Instant CRM update and email follow-up</b></p><div class="wc-pills"><span>n8n</span><span>Zoho CRM</span><span>AI</span></div></article>
   </div>
   <div class="work-bar"><span id="workBar"></span></div>
   </div>
 </section>
+<!-- ============ WEBSITES I BUILT ============ -->
+<section class="sites" id="websites">
+  <div class="sec-head"><span class="sec-our">WEBSITES</span><h2 class="split-h" data-text="I BUILT">I BUILT</h2></div>
+  <div class="sites-grid">
+    <article class="site-card"><span class="wc-tag">Ronak Pharma</span><h3>Wholesale Distributor Website</h3><a class="wc-shot" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fronakpharma.netlify.app%2F?w=1000&h=625" alt="Ronak Pharma website screenshot"></a><a class="wc-visit" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
+    <article class="site-card"><span class="wc-tag">Green Agro Mart</span><h3>Agri-Inputs E-commerce Website</h3><a class="wc-shot" href="https://greenagromart.com/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgreenagromart.com%2F?w=1000&h=625" alt="Green Agro Mart website screenshot"></a><a class="wc-visit" href="https://greenagromart.com/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
+    <article class="site-card"><span class="wc-tag">EverydaySmile</span><h3>Healthcare Consulting Website</h3><a class="wc-shot" href="https://www.everydaysmile.in/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.everydaysmile.in%2F?w=1000&h=625" alt="EverydaySmile website screenshot"></a><a class="wc-visit" href="https://www.everydaysmile.in/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
+  </div>
+</section>
+
 
 <!-- ============ TRENDS + IDEAS ============ -->
 <section class="insights" id="insights">
