@@ -27,6 +27,32 @@
 .site-card:nth-child(3){background:linear-gradient(150deg,#1b1030,#c0313f)}
 .site-card .wc-tag{align-self:flex-start;margin-bottom:14px}
 .site-card h3{font-size:clamp(22px,2.2vw,30px);line-height:1.05;letter-spacing:.02em;color:#fff;margin-bottom:14px}
+.sites-grid{perspective:1400px}
+@property --a{syntax:"<angle>";initial-value:0deg;inherits:false}
+.site-card{position:relative;isolation:isolate;opacity:0;transform:translateY(var(--fy,70px)) rotateX(var(--rx,0deg)) rotateY(var(--ry,0deg));transform-style:preserve-3d;transition:opacity .9s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.site-card.in{opacity:1;--fy:0px}
+.site-card::before{content:"";position:absolute;inset:-2px;border-radius:26px;z-index:-1;background:conic-gradient(from var(--a),transparent 0 60%,#ffd9c2 78%,#fff 86%,transparent 100%);animation:scSpin 5s linear infinite;opacity:.9}
+@keyframes scSpin{to{--a:360deg}}
+.sc-glow{position:absolute;inset:0;border-radius:24px;pointer-events:none;opacity:0;transition:opacity .3s;background:radial-gradient(360px circle at var(--mx,50%) var(--my,50%),rgba(255,255,255,.28),transparent 60%);z-index:0}
+.site-card:hover .sc-glow{opacity:1}
+.sc-browser{display:block;border-radius:12px;overflow:hidden;background:#fff;box-shadow:0 22px 40px rgba(0,0,0,.4);transform:translateZ(40px);animation:scFloat 6s ease-in-out infinite;position:relative;z-index:1}
+.site-card:nth-child(2) .sc-browser{animation-delay:-2s}.site-card:nth-child(3) .sc-browser{animation-delay:-4s}
+@keyframes scFloat{50%{transform:translateZ(40px) translateY(-8px)}}
+.sc-bar{display:flex;align-items:center;gap:6px;padding:9px 12px;background:#eceef2}
+.sc-bar i{width:9px;height:9px;border-radius:50%;background:#ff5f57}.sc-bar i:nth-child(2){background:#febc2e}.sc-bar i:nth-child(3){background:#28c840}
+.sc-url{margin-left:8px;flex:1;background:#fff;border-radius:20px;padding:3px 12px;font:600 11px/1.5 Open Sans,sans-serif;color:#444;overflow:hidden;white-space:nowrap;max-width:0}
+.site-card.in .sc-url{animation:scType 1.6s steps(24) .7s forwards}
+@keyframes scType{to{max-width:100%}}
+.sc-view{position:relative;aspect-ratio:16/10;overflow:hidden}
+.sc-view img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transform:scale(1.02);transition:transform 6s cubic-bezier(.2,.6,.2,1)}
+.site-card:hover .sc-view img{transform:scale(1.2) translate(-3%,-6%)}
+.sc-shine{position:absolute;inset:0;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.55) 50%,transparent 60%);transform:translateX(-120%);animation:scShine 4.5s ease-in-out infinite}
+@keyframes scShine{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.site-card .wc-visit{position:relative;z-index:1;transition:transform .25s,box-shadow .25s;animation:scPulse 2.4s infinite}
+.site-card .wc-visit b{display:inline-block;transition:transform .25s}
+.site-card .wc-visit:hover{transform:translateY(-2px)}.site-card .wc-visit:hover b{transform:translate(3px,-3px)}
+@keyframes scPulse{0%{box-shadow:0 0 0 0 rgba(255,255,255,.55)}70%,100%{box-shadow:0 0 0 14px rgba(255,255,255,0)}}
+@media (prefers-reduced-motion:reduce){.site-card,.site-card::before,.sc-browser,.sc-shine,.site-card .wc-visit{animation:none!important;transition:none!important}.site-card{opacity:1;transform:none}.sc-url{max-width:100%}}
 </style>
 </head>
 <body>
@@ -247,9 +273,9 @@
 <section class="sites" id="websites">
   <div class="sec-head"><span class="sec-our">WEBSITES</span><h2 class="split-h" data-text="I BUILT">I BUILT</h2></div>
   <div class="sites-grid">
-    <article class="site-card"><span class="wc-tag">Ronak Pharma</span><h3>Wholesale Distributor Website</h3><a class="wc-shot" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener"><img src="assets/ronak-pharma-cover.jpg" alt="Ronak Pharma website screenshot"></a><a class="wc-visit" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
-    <article class="site-card"><span class="wc-tag">Green Agro Mart</span><h3>Agri-Inputs E-commerce Website</h3><a class="wc-shot" href="https://greenagromart.com/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgreenagromart.com%2F?w=1000&h=625" alt="Green Agro Mart website screenshot"></a><a class="wc-visit" href="https://greenagromart.com/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
-    <article class="site-card"><span class="wc-tag">EverydaySmile</span><h3>Healthcare Consulting Website</h3><a class="wc-shot" href="https://www.everydaysmile.in/" target="_blank" rel="noopener"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.everydaysmile.in%2F?w=1000&h=625" alt="EverydaySmile website screenshot"></a><a class="wc-visit" href="https://www.everydaysmile.in/" target="_blank" rel="noopener">Click here to visit website ↗</a></article>
+    <article class="site-card"><div class="sc-glow"></div><span class="wc-tag">Ronak Pharma</span><h3>Wholesale Distributor Website</h3><a class="sc-browser" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener" aria-label="Visit Ronak Pharma website"><div class="sc-bar"><i></i><i></i><i></i><span class="sc-url">ronakpharma.netlify.app</span></div><div class="sc-view"><img src="assets/ronak-pharma-cover.jpg" alt="Ronak Pharma website screenshot"><div class="sc-shine"></div></div></a><a class="wc-visit" href="https://ronakpharma.netlify.app/" target="_blank" rel="noopener">Click here to visit website <b>↗</b></a></article>
+    <article class="site-card"><div class="sc-glow"></div><span class="wc-tag">Green Agro Mart</span><h3>Agri-Inputs E-commerce Website</h3><a class="sc-browser" href="https://greenagromart.com/" target="_blank" rel="noopener" aria-label="Visit Green Agro Mart website"><div class="sc-bar"><i></i><i></i><i></i><span class="sc-url">greenagromart.com</span></div><div class="sc-view"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fgreenagromart.com%2F?w=1000&h=625" alt="Green Agro Mart website screenshot"><div class="sc-shine"></div></div></a><a class="wc-visit" href="https://greenagromart.com/" target="_blank" rel="noopener">Click here to visit website <b>↗</b></a></article>
+    <article class="site-card"><div class="sc-glow"></div><span class="wc-tag">EverydaySmile</span><h3>Healthcare Consulting Website</h3><a class="sc-browser" href="https://www.everydaysmile.in/" target="_blank" rel="noopener" aria-label="Visit EverydaySmile website"><div class="sc-bar"><i></i><i></i><i></i><span class="sc-url">everydaysmile.in</span></div><div class="sc-view"><img src="https://s.wordpress.com/mshots/v1/https%3A%2F%2Fwww.everydaysmile.in%2F?w=1000&h=625" alt="EverydaySmile website screenshot"><div class="sc-shine"></div></div></a><a class="wc-visit" href="https://www.everydaysmile.in/" target="_blank" rel="noopener">Click here to visit website <b>↗</b></a></article>
   </div>
 </section>
 
@@ -428,5 +454,11 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="script.js"></script>
+<script>
+(function(){var cards=[].slice.call(document.querySelectorAll('.site-card'));if(!cards.length)return;
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){var c=e.target,i=cards.indexOf(c);c.style.transitionDelay=(i*160)+'ms';c.classList.add('in');setTimeout(function(){c.style.transitionDelay='0ms'},1300);io.unobserve(c);}})},{threshold:.2});
+cards.forEach(function(c){io.observe(c);
+if(window.matchMedia('(hover:hover)').matches){c.addEventListener('mousemove',function(e){var r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;c.style.setProperty('--ry',((x-.5)*14)+'deg');c.style.setProperty('--rx',((.5-y)*10)+'deg');c.style.setProperty('--mx',(x*100)+'%');c.style.setProperty('--my',(y*100)+'%')});c.addEventListener('mouseleave',function(){c.style.setProperty('--rx','0deg');c.style.setProperty('--ry','0deg')});}});})();
+</script>
 </body>
 </html>
